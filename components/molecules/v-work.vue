@@ -57,7 +57,7 @@ export default defineComponent({
     @apply -mt-150px;
 
     .container {
-      @apply h-100vh py-150px flex justify-end;
+      @apply h-950px py-150px flex justify-end;
 
       ._text {
         @apply max-w-605px;
