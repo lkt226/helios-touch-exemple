@@ -3,7 +3,7 @@ const env = {
   getInfoOnFetch: 'false',
   rdApiKey: '####',
   // baseURL: '/landing-pages/helios/',
-  baseURL: '/',
+  baseURL: '',
 }
 
 const meta = {
