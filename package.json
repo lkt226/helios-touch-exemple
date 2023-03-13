@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "init": "nuxt init",
+    "static": "nuxt generate && cd .output/public && live-server",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^3.0.0",
+    "nuxt": "^3.0.0",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "vitest": "^0.28.1"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
+    "@splidejs/splide": "^4.1.4",
+    "c8": "^7.12.0",
+    "console.history": "^1.5.2",
+    "gsap": "^3.11.4",
+    "nuxt-windicss": "^2.6.0"
+  }
+}

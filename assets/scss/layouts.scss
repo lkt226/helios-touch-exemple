@@ -1,0 +1,26 @@
+.layouts {
+  &.column {
+    @apply grid auto-rows-max;
+  }
+  &.row {
+    @apply flex;
+  }
+}
+
+.s-gap {
+  @apply gap-5px;
+}
+
+.m-gap {
+  @apply gap-30px;
+}
+
+.l-gap {
+  @apply gap-150px;
+}
+
+@media screen and (max-width: 768px) {
+  .l-gap {
+    @apply gap-75px;
+  }
+}

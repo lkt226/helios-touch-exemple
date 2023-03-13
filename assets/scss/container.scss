@@ -1,0 +1,39 @@
+:root {
+  --max-w: 90vw;
+}
+
+.container {
+  @apply mx-auto max-w-$max-w;
+}
+
+.l-container {
+  @apply ml-[calc((100vw-var(--max-w))/2)];
+}
+
+.r-container {
+  @apply mr-[calc((100vw-var(--max-w))/2)];
+}
+
+@media (min-width: 640px) {
+  :root {
+    --max-w: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --max-w: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --max-w: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --max-w: 1170px;
+  }
+}

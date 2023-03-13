@@ -1,0 +1,43 @@
+.anim {
+  @apply transform;
+  transition: opacity 0.3s ease-in-out,
+              transform 0.1s ease-in;
+
+  transition-delay: 0.5s;
+
+  // FADE OUT (ESTAVA INVISIVEL E APARECE)
+  &.fade-out {
+    @apply opacity-0;
+
+    &.active {
+      @apply opacity-100;
+    }
+  }
+
+  //DEFAULT ANIMATION
+  &:not(.fade-out) {
+    @apply opacity-20
+            transform scale-y-90
+            origin-bottom;
+    transition-delay: 0.1s;
+
+    &.active {
+      @apply opacity-100 scale-y-100;
+    }
+  }
+}
+
+._img_hover {
+  @apply relative overflow-hidden;
+  --scale: 100;
+
+  img {
+    @apply transform scale-100
+            object-center object-cover;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover img {
+    scale: calc(var(--scale) / 100);
+  }
+}
