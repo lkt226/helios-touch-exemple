@@ -5,7 +5,7 @@
       <h2>{{ item.description }}</h2>
     </div>
 
-    <v-video src="/src/videos/unboxing.mp4" :alt="item.alt" />
+    <v-video src="src/videos/unboxing.mp4" :alt="item.alt" />
   </v-container>
 </template>
 

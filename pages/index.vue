@@ -1,7 +1,7 @@
 <template>
   <main id="home" class="layouts column l-gap">
-    <v-banner background="/src/images/banner.png" :item="lang.banner" />
-    <v-work background="/src/images/work.png" :item="lang.work" />
+    <v-banner background="src/images/banner.png" :item="lang.banner" />
+    <v-work background="src/images/work.png" :item="lang.work" />
 
     <v-container class="_reading">
       <div class="_text layouts column s-gap">
@@ -9,13 +9,13 @@
         <h2>{{ lang.reading.description }}</h2>
       </div>
       <v-carousel :settings="{height: 700}">
-        <v-img src="/src/images/reading/0.png" width="1440px"/>
-        <v-img src="/src/images/reading/1.png" width="1440px"/>
-        <v-img src="/src/images/reading/2.png" width="1440px"/>
+        <v-img src="src/images/reading/0.png" width="1440px"/>
+        <v-img src="src/images/reading/1.png" width="1440px"/>
+        <v-img src="src/images/reading/2.png" width="1440px"/>
       </v-carousel>
     </v-container>
 
-    <v-pets background="/src/images/pets.png" :item="lang.pets" />
+    <v-pets background="src/images/pets.png" :item="lang.pets" />
 
     <v-you :item="lang.you" />
 
@@ -24,8 +24,8 @@
         <p>{{ lang.montage.title }}</p>
 
         <div class="_video">
-          <v-video src="/src/videos/montage.mp4" :alt="lang.montage.alt" />
-          <v-img class="_background" src="/src/images/montage.png" width="1440px"/>
+          <v-video src="src/videos/montage.mp4" :alt="lang.montage.alt" />
+          <v-img class="_background" src="src/images/montage.png" width="1440px"/>
         </div>
       </div>
     </v-container>
@@ -37,7 +37,7 @@
           <h2>{{ lang.buy.description }}</h2>
         </a>
       </div>
-      <v-img src="/src/images/buy.png" width="780px"/>
+      <v-img src="src/images/buy.png" width="780px"/>
     </v-container>
   </main>    
 </template>

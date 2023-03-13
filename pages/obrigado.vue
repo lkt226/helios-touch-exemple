@@ -1,6 +1,6 @@
 <template>
   <main id="thanks">
-    <v-container class="_banner" background="/src/images/background_thanks.png">
+    <v-container class="_banner" background="src/images/background_thanks.png">
       <nuxt-link to="/">
         <v-img src="src/svgs/logo_shiva_white.svg" width="170px" />
       </nuxt-link>
