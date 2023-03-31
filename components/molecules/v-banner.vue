@@ -64,7 +64,7 @@ export default defineComponent({
     &.active {
       @apply relative w-full h-full;
       .container {
-        @apply h-80vh;
+        @apply h-70vh;
 
         h1,p {
           @apply opacity-100 translate-y-0;
