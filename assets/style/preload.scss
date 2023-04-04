@@ -1,0 +1,61 @@
+/* 
+  Informações:
+  Cares padrões do site: fica mais fácil de lembrar e de modificar se deixar elas salvas assim,
+  além de que se for trazer um modo noturno por exemplo, dessa forma fica mais fácil de resolver.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Roboto:wght@300;400;700;900&display=swap');
+
+:root {
+  --primary: #3E3E3E;
+  --secondary: #FFD082;
+
+  --white: #FFFFFF;
+  --black: #3E3E3E;
+}
+
+h1,h2,h3,h4, .default_button {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 24px;
+  line-height: 29px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--black);
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 56px;
+}
+h2 {
+  font-size: 36px;
+  line-height: 42px;
+
+  &.small {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+h3 {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+._background {
+  @apply absolute left-0 top-0 w-full h-full -z-1 pointer-events-none;
+}
+
+._text {
+  @apply content-center;
+}

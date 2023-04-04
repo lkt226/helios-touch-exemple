@@ -1,101 +1,73 @@
 <template>
   <main id="home" class="layouts column l-gap">
-    <v-banner background="src/images/banner.png" :item="lang.banner" />
-    <v-work background="src/images/work.png" :item="lang.work" />
+    <v-banner :lang="lang.banner" />
 
-    <v-container class="_reading">
+    <section class="container layouts grid-2 ml-gap _transform_your_house">
+      <v-img width="730px" height="450px" alt="Ambiente de uma sala aconchegante com o produto no fundo." />
       <div class="_text layouts column s-gap">
-        <p>{{ lang.reading.title }}</p>
-        <h2>{{ lang.reading.description }}</h2>
+        <h2>{{ lang.transform_your_house.title }}</h2>
+        <p>{{ lang.transform_your_house.description }}</p>
       </div>
-      <v-carousel :settings="{height: 700}">
-        <v-img src="src/images/reading/0.png" width="1440px"/>
-        <v-img src="src/images/reading/1.png" width="1440px"/>
-        <v-img src="src/images/reading/2.png" width="1440px"/>
-      </v-carousel>
-    </v-container>
+    </section>
 
-    <v-pets background="src/images/pets.png" :item="lang.pets" />
+    <v-create_a_personal_ambient :lang="lang.create_a_personal_ambient" />
 
-    <v-you :item="lang.you" />
-
-    <v-container class="_montage">
+    <section class="container layouts grid-2 ml-gap _stand_out_with_yours_iluminations">
+      <v-img width="730px" height="450px" alt="Ambiente de uma sala aconchegante com o produto no fundo." />
       <div class="_text layouts column s-gap">
-        <p>{{ lang.montage.title }}</p>
-
-        <div class="_video">
-          <v-video src="src/videos/montage.mp4" :alt="lang.montage.alt" />
-          <v-img class="_background" src="src/images/montage.png" width="1440px"/>
-        </div>
+        <h2>{{ lang.stand_out_with_yours_iluminations.title }}</h2>
+        <p>{{ lang.stand_out_with_yours_iluminations.description }}</p>
       </div>
-    </v-container>
+    </section>
 
-    <v-container class="_buy">
-      <div class="_text layouts column s-gap">
-        <p>{{ lang.buy.title }}</p>
-        <a :href="lang.buy.url" target="_blank">
-          <h2>{{ lang.buy.description }}</h2>
-        </a>
-      </div>
-      <v-img src="src/images/buy.png" width="780px"/>
-    </v-container>
-  </main>    
+    <v-form id="helios_touch-lp-final_page">
+      <h2>{{ lang.form.title }}</h2>
+      <v-input name="name" :placeholder="inputs.name.placeholder" :title="inputs.name.title"/>
+      <v-input name="email" type="email" :placeholder="inputs.email.placeholder" :title="inputs.email.title"/>
+      <button type="submit">{{ lang.form.cta }}</button>
+    </v-form>
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import lang from '@/lang/index'
+import lang from '@/lang/ptbr'
+
+const meta = {
+  title: '',
+  description: ''
+}
 
 export default defineComponent({
-  data () {
+  setup(props) {
+    useHead({
+      title: meta.title,
+      meta: [
+        { name: 'title', content: meta.title },
+        { name: 'description', content: meta.description },
+        // Google
+        { property: 'og:title', content: meta.title },
+        { property: 'og:description', content: meta.description }
+      ]
+    })
+
     return {
-      lang: lang.homePage
+      lang: lang.homePage,
+      inputs: lang.inputs
     }
-  }
+  },
+
+  mounted () {
+  },
 })
 </script>
 
+
 <style lang="scss">
   #home {
-    ._montage .container {
-      @apply text-center content-center py-100px;
-
-      ._text {
-        @apply max-w-4/5 mx-auto text-right;
-      }
-      ._background {
-        @apply absolute left-0 top-0 
-                w-full h-full -z-1
-                object-center object-cover;
-      }
-    }
-
-    ._buy .container {
-      @apply grid;
-      grid-template-columns: 1fr 2fr;
-
-      ._text {
-        @apply content-center;
-      }
-    } 
-  }
-
-  @media screen and (max-width: 768px) {
-    #home {
-      ._montage .container {
-        @apply py-0px;
-
-        ._text {
-          @apply max-w-full text-center;
-        }
-        ._background {
-          @apply hidden;
-        }
-      }
-
-      ._buy .container {
-        @apply grid-cols-1;
-      } 
+    ._transform_your_house ._text,
+    ._stand_out_with_yours_iluminations ._text {
+      @apply max-w-415px;
     }
   }
 </style>

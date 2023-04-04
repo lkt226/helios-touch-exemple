@@ -1,110 +1,124 @@
 <template>
-  <section
+  <div
     ref="splide"
-    class="splide v-carousel"
+    class="splide _v_carousel"
   >
     <div class="splide__slider">
       <div class="splide__track">
         <ul class="splide__list">
-          <!-- <li class="splide__slide">Slide 01</li> -->
           <slot />
         </ul>
       </div>
     </div>
-    <div class="splide__arrows">
-      <button class="splide__arrow splide__arrow--prev not">
-        Voltar
-        <v-img src="src/svgs/prev.svg" width="15px" />
-        <!-- <v-image src="icons/prev_arrow.svg" width="34px" /> -->
-      </button>
-      <button class="splide__arrow splide__arrow--next not">
-        Proximo
-        <v-img src="src/svgs/next.svg" width="15px" />
-        <!-- <v-image src="icons/next_arrow.svg" width="34px" /> -->
-      </button>
-    </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Splide from '@splidejs/splide'
+import { Splide, Options } from '@splidejs/splide'
 import '@splidejs/splide/dist/css/splide-core.min.css'
 
 export default defineComponent({
   props: {
-    settings: {
-      type: Object,
+    externSettings: {
+      type: Object as () => Options,
       default: () => ({})
+    },
+    onlyInMobile: {
+      type: Boolean,
+      default: false
     }
   },
   mounted() {
-    const settings = {
+    // Configurações internas do Carrossel
+    let internSettings = {
       type: 'loop',
       drag: true,
-      focus: 'center',
+      focus: 0,
       pauseOnHover: true,
       perPage: 1,
       perMove: 1,
       autoplay: true,
-      gap: 20,
-      ...this.settings,
+      interval: 5000,
+      gap: 30,
+
       breakpoints: {
         768: {
-          height: 0,
+          perPage: 1,
         },
-      }
-    } as any
+      },
+      ...this.externSettings
+    } as Options
 
-    setTimeout(() => {
-      const splides = document.querySelectorAll('.splide')
-
-      for (let i = 0; i < splides.length; i++) {
-        const splide = splides[i] as HTMLElement;
-
-        if (!splide.classList.contains('is-initialized')) {
-
-          splide.querySelectorAll('.splide__list >*').forEach((item) => {
-            if (!item.classList.contains('splide__slide')) {
-              item.classList.add('splide__slide')
-            }
-          });
-
-          const splidejs = this.$refs.splide as HTMLElement;
-          new Splide(splidejs, settings).mount()
+    if (this.onlyInMobile) {
+      // Caso o carrossel seja somente no mobile, então é usado esse Objeto para as configurações.
+      internSettings = {
+        destroy: true,
+        arrows: false,
+        pagination: false,
+        breakpoints: {
+          768: {
+            destroy: false,
+            type: 'loop',
+            arrows: true,
+            autoplay: true,
+            interval: 5000,
+            ...this.externSettings
+          }
         }
       }
-    }, 300)
-  },
+    }
+
+    // Define a variável Splide e define ela como HTMLElement
+    const splideElement = this.$refs.splide as HTMLElement | null; 
+
+    if (splideElement) {
+      // Verifica se o splide já foi iniciado
+      if (!splideElement.classList.contains('is-initialized')) {
+        // Caso não tenha sido iniciado ainda, ele pega todos os filhos de "splide_list"
+        splideElement.querySelectorAll('.splide__list >*').forEach((carouselItem) => {
+          // Verifica se os filhos de "splide__list" tem a classe "splide__slide" que é essencial pro funcionamento do plugin
+          if (!carouselItem.classList.contains('splide__slide')) {
+            // Caso não, ele adiciona. (esse código foi feito pra não precisar colocar o "splide_slide" no item toda vez)
+            carouselItem.classList.add('splide__slide')
+          }
+        });
+  
+        new Splide(splideElement, internSettings).mount()
+      }
+    }
+  }
 })
 </script>
 
 <style lang="scss">
-  .splide {
-    @apply visible mb-50px;
+  ._v_carousel {
+    @apply visible w-full;
 
-    .splide__slide {
-      @apply w-full;
-    }
+    .splide__slider {
+      @apply flex flex-col-reverse;
 
-    .splide__arrows  {
-     @apply hidden;
-    }
+      .splide__arrows  {
+        @apply flex justify-center gap-30px pt-35px
+                pointer-events-none;
+  
+        .splide__arrow  {
+          @apply text-0px relative w-30px h-30px
+                  flex items-center justify-center
+                  pointer-events-auto cursor-pointer;
 
-    .splide__pagination {
-      @apply gap-10px;
-      display: flex !important;
-
-      .splide__pagination__page  {
-        @apply bg-$white w-15vw h-5px rounded-2px;
-        box-shadow: inset 0px 0px 0px 1px var(--black);
-        transition: all 0.2s ease-in-out;
-
-        &.is-active {
-          @apply bg-$black w-25vw;
+          &.splide__arrow--prev {
+            @apply transform rotate-y-180;
+          }
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .splide .splide__arrows {
+      @apply pt-15px;
     }
   }
 </style>

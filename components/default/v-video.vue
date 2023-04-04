@@ -1,9 +1,7 @@
 <template>
-  <video 
-    :src="prefix + src" 
-    :alt="alt" 
-    controls
-  />
+  <div class="_video">
+    <video :src="src" muted autoplay playsinline loop></video>
+  </div>
 </template>
 
 <script lang="ts">
@@ -14,24 +12,16 @@ export default defineComponent({
     src: {
       type: String,
       required: true
-    },
-    alt: {
-      type: String,
-      required: false
     }
   },
-  data () {
-    const config = useRuntimeConfig().public
-
-    return {
-      prefix: config.baseURL
-    }
-  }
 })
 </script>
 
 <style lang="scss">
-  video {
-    @apply rounded-7px;
+  ._video {
+    @apply overflow-hidden;
+    video {
+      @apply w-full h-full object-center object-cover;
+    }
   }
 </style>

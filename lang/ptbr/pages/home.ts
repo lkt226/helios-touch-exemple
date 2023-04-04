@@ -1,32 +1,30 @@
+interface banner {
+  title: string
+  description: string
+}
+
 export default {
   banner: {
     title: 'Helios Touch',
-    description: 'A luz que você procurava'
+    description: 'A iluminação que inspira criatividade e sofisticação.'
   },
-  work: {
-    title: 'Para o seu trabalho',
-    description: 'Ambientes organizados e bonitos para te ajudar no você já é bom.'
+  transform_your_house: {
+    title: 'Destaque-se com nossas iluminações sofisticadas',
+    description: 'Adicione um toque de sofisticação à sua casa com as lâmpadas exclusivas e elegantes da nossa coleção. Seja o centro das atenções com designs únicos que irão destacá-lo da multidão.'
   },
-  reading: {
-    title: 'Para sua Leitura',
-    description: 'Um ambiente controlável, para manter seu conforto em uma hora tão importante.'
+  create_a_personal_ambient: {
+    title: 'Crie um ambiente personalizado que reflita sua personalidade única',
+    description: 'Transforme sua casa em um espaço único e personalizado, refletindo sua identidade e estilo com nossa exclusiva variedade de lâmpadas de design.'
   },
-  pets: {
-    title: 'Para seus pets',
-    description: 'Seus animais, principalmente gatos adoram nossas lâmpadas.'
+  stand_out_with_yours_iluminations: {
+    title: 'Transforme sua casa em um ambiente aconchegante.',
+    description: 'Crie um ambiente acolhedor e exclusivo em sua casa com nossas lâmpadas únicas e elegantes. Transforme a iluminação em uma experiência única e sofisticada.'
   },
-  montage: {
-    title: 'Simples até na montagem',
-    alt: 'Video mostrando como é simples a montagem e a utilização das lampadas.'
+  depositions: {
+    title: 'Veja quem já aprovou nossas luminárias'
   },
-  you: {
-    title: 'Pra você',
-    description: 'A melhor luminária se preocupa com você desde a entrega.',
-    alt: 'Unboxing mostrando como vem os produtos, e montando ele bem rápido.'
-  },
-  buy: {
-    title: 'Sua compra',
-    description: 'Clique aqui para adquirir a sua',
-    url: 'https://pt.aliexpress.com/item/1005004795716383.html?spm=a2g0o.ppclist.product.12.7709PupvPupv2v&pdp_npi=2%40dis%21BRL%21R%24%20650%2C72%21R%24%20299%2C33%21%21%21%21%21%402101d1b516786256346687624e5e39%2112000030515479709%21btf&_t=pvid%3A52af04ef-e9fa-4d18-9a04-7878099d44c5&afTraceInfo=1005004795716383__pc__pcBridgePPC__xxxxxx__1678625635&gatewayAdapt=glo2bra'
+  form: {
+    title: 'Entre em contato para encomendar as suas luminárias',
+    cta: 'Enviar'
   }
 }
