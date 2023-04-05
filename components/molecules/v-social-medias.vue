@@ -4,7 +4,7 @@
       Linkedin
       <Linkedin />
     </a>
-    <a href="https://github.com/lkt226" target="_blank" class="_github">
+    <a href="https://github.com/lkt226/helios-touch-exemple" target="_blank" class="_github">
       Github
       <Github />
     </a>

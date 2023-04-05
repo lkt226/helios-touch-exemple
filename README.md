@@ -1,4 +1,4 @@
-#Helios Touch
+# Helios Touch
 
 ## Descrição
 Esse é um projeto de portfolio, sem fins comerciais, a "helios touch" é uma empresa que existiu mas que acho que já fechou, ela realmente vendia essa lampada, e eu gostei do produto então usei de referencia.
@@ -13,7 +13,7 @@ as Técnologias usadas são:
 
 O objetivo do site era expor um site moderno, porem minimalista e interativo, tentei fazer isso com transições, videos e o gsap.
 
-## Instalação
+## Instalação / Utilização
 
 Yarn
 - yarn install
@@ -22,6 +22,9 @@ Yarn
 NPM
 - npm install
 - npm run dev
+
+Online
+- https://helios-touch.vercel.app
 
 ### Créditos
 - Programação: Lkt226
