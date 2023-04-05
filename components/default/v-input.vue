@@ -122,7 +122,7 @@ export default defineComponent({
               absolute top-1/2 right-25px mb-2px
               transform -translate-y-1/2 scale-y-75
               pointer-events-none opacity-0;
-        background-image: url('@/assets/svgs/arrow_down.svg');
+        // background-image: url('@/assets/svgs/arrow_down.svg');
         transition: all 0.2s ease-in;
       }
 
