@@ -9,7 +9,7 @@ const env = {
   gtm: 'G-XXXXXXXXXX',
   rdStation: '',
   url: '/',
-  origin: 'http://localhost:3000'
+  origin: 'https://helios-touch.vercel.app'
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
