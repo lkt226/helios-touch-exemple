@@ -1,42 +1,29 @@
-# Nuxt 3 Minimal Starter
+#Helios Touch
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Descrição
+Esse é um projeto de portfolio, sem fins comerciais, a "helios touch" é uma empresa que existiu mas que acho que já fechou, ela realmente vendia essa lampada, e eu gostei do produto então usei de referencia.
 
-## Setup
+as Técnologias usadas são:
+- NuxtJS
+- VueJS
+- WindiCSS
+- SCSS
+- GSAP
+- Lenis
 
-Make sure to install the dependencies:
+O objetivo do site era expor um site moderno, porem minimalista e interativo, tentei fazer isso com transições, videos e o gsap.
 
-```bash
-# yarn
-yarn install
+## Instalação
 
-# npm
-npm install
+Yarn
+- yarn install
+- yarn dev
 
-# pnpm
-pnpm install
-```
+NPM
+- npm install
+- npm run dev
 
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Créditos
+- Programação: Lkt226
+- Design: Lkt226 + ChatGPT + DALL.E
+- Redação: ChatGPT
