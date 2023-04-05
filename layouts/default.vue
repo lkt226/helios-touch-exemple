@@ -1,5 +1,6 @@
 <template>
   <div id="body" class="layouts column ml-gap">
+    <v-float-buttons />
     <slot />
     <v-footer />
   </div>

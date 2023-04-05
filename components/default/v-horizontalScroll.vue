@@ -1,5 +1,5 @@
 <template>
-  <section class="_horizontal_scroll layouts flex m-gap">
+  <section class="_horizontal_scroll layouts flex">
     <slot />
   </section>
 </template>
@@ -23,16 +23,24 @@ export default defineComponent({
       }
 
       let items = gsap.utils.toArray("._horizontal_scroll ._item");
-  
+
+      // CALCULO DA TELA
+      let allWidths = 0
+      items.forEach((item, index) => {
+        allWidths += item.offsetWidth || 0
+        allWidths += 50
+      })
+      allWidths -= (window.innerWidth * 0.95)
+
       gsap.to(items, {
-        xPercent: -100 * (items.length - 2),
+        // xPercent: -100 * (items.length - 1),
+        x: allWidths * -1,
         ease: "none",
         scrollTrigger: {
           trigger: "._horizontal_scroll",
           pin: true,
           scrub: 1,
-          snap: 1 / (items.length - 1),
-          start: 'center center',
+          // snap: 1 / (items.length - 1),
           end: () => "+=" + horizontalScroll.offsetWidth
         }
       });
@@ -43,8 +51,8 @@ export default defineComponent({
 
 <style lang="scss">
   ._horizontal_scroll {
-    @apply h-100vh overflow-hidden
-            bg-$secondary flex items-center;
+    @apply h-100vh overflow-hidden gap-50px
+            bg-$secondary text-$black flex items-center;
 
     ._item {
       picture {
@@ -52,7 +60,19 @@ export default defineComponent({
       }
 
       &._text {
-        @apply min-w-400px mr-25px pr-100px;
+        @apply mr-25px pr-100px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    ._horizontal_scroll ._item {
+      picture {
+        @apply min-w-90vw;
+      }
+
+      &._text {
+        @apply min-w-80vw mr-5vw pr-10vw;
       }
     }
   }

@@ -1,7 +1,7 @@
 const meta = {
-  title: '### TITLE ###',
-  description: '### Description ###',
-  url: '/',
+  title: 'Helios Touch',
+  description: 'Se você está procurando uma lâmpada moderna e de luxo para iluminar seu ambiente, você veio ao lugar certo.',
+  url: 'https://helios-touch.vercel.app',
   author: 'Lkt226'
 }
 
@@ -36,7 +36,7 @@ export default defineNuxtConfig({
       ],
 
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: `${env.url}src/favicon.svg` }
+        { rel: 'icon', type: 'image/svg+xml', href: `${env.url}favicon.svg` }
       ]
     },
 
@@ -53,6 +53,7 @@ export default defineNuxtConfig({
     '@/assets/style/layouts.scss',
     '@/assets/style/preload.scss',
     '@/assets/style/animation.scss',
+    '@/assets/style/darkmode.scss',
   ],
 
   components: [
@@ -74,7 +75,9 @@ export default defineNuxtConfig({
     'nuxt-vitest',
     'nuxt-gtag',
     '@nuxtjs/robots',
-    'nuxt-simple-sitemap'
+    'nuxt-simple-sitemap',
+    'nuxt-svgo',
+    '@nuxtjs/color-mode'
   ],
 
   runtimeConfig: {

@@ -111,7 +111,7 @@ export default defineComponent({
     @apply block w-full h-max;
 
     img {
-      @apply w-full rounded-4px;
+      @apply w-full h-full object-center object-cover rounded-4px;
     }
   }
 </style>

@@ -1,0 +1,24 @@
+html.dark-mode {
+  @apply text-$white;
+
+  #body {
+    @apply bg-$black;
+  }
+
+  #footer {
+    @apply bg-$white text-$black;
+  }
+}
+
+html {
+  transition: color 0.25s ease;
+
+  #body {
+    transition: background-color 0.25s ease;
+  }
+
+  #footer {
+    transition: color 0.25s ease,
+                background-color 0.25s ease;
+  }
+}

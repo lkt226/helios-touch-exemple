@@ -11,9 +11,10 @@
     </section>
 
     <v-create_a_personal_ambient :lang="lang.create_a_personal_ambient" class="no-animation" />
+    <v-create_a_personal_ambient_mobile :lang="lang.create_a_personal_ambient" class="no-animation" />
 
     <v-horizontal-scroll class="_exemples">
-      <div class="l-container _text"><h2>{{ lang.exemples.title }}</h2></div>
+      <div class="_text"><h2 class="l-container">{{ lang.exemples.title }}</h2></div>
       <div><v-img src="src/images/exemples_1.png" width="600px" height="600px" alt="Ambiente de uma sala aconchegante com o produto no fundo." /></div>
       <div><v-img src="src/images/exemples_2.png" width="600px" height="600px" alt="Ambiente de uma sala aconchegante com o produto no fundo." /></div>
       <div><v-img src="src/images/exemples_3.png" width="600px" height="600px" alt="Ambiente de uma sala aconchegante com o produto no fundo." /></div>
@@ -30,7 +31,7 @@
 
     <section class="_depositions layouts column s-gap">
       <h2>{{ lang.depositions.title }}</h2>
-      <v-carousel :externSettings="{ autoWidth: true, arrows: false }">
+      <v-carousel :externSettings="{ arrows: false }">
         <div class="_item layouts column s-gap" v-for="deposition in depositions" :key="deposition.title">
           <h3>{{ deposition.title }}</h3>
           <div class="_scroll">
@@ -101,7 +102,7 @@ export default defineComponent({
 
       ._item {
         @apply w-500px
-                bg-$secondary p-35px pr-15px rounded-26px;
+                bg-$secondary text-$black p-35px pr-15px rounded-26px;
 
         ._scroll {
           @apply h-406px pr-20px;
@@ -114,6 +115,33 @@ export default defineComponent({
       
       h2 {
         @apply max-w-630px mx-auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #home {
+      ._transform_your_house ._text,
+      ._stand_out_with_yours_iluminations ._text {
+        @apply text-center row-start-1;
+      }
+  
+      ._depositions {
+        h2 {
+          @apply max-w-90vw;
+        }
+        
+        ._item {
+          @apply w-90vw;
+
+          ._scroll {
+            @apply h-256px pr-20px;
+          }
+        }
+      }
+
+      ._helios_form {
+        @apply max-w-90vw;
       }
     }
   }

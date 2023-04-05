@@ -63,4 +63,10 @@ export default defineComponent({
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    #create_a_personal_ambient {
+      @apply hidden;
+    }
+  }
 </style>

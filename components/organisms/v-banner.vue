@@ -41,4 +41,10 @@ export default defineComponent({
       @apply rounded-b-40px;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    #banner {
+      @apply p-25px;
+    }
+  }
 </style>

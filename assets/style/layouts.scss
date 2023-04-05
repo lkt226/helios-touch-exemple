@@ -53,7 +53,10 @@
     display: grid;
     grid-auto-rows: min-content;
   }
-  
+  .layouts.grid-2 {
+    @apply grid-cols-1;
+  }
+
   .m-gap {
     grid-gap: 40px;
     gap: 40px;

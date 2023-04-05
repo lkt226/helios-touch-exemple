@@ -27,6 +27,6 @@ export default defineComponent({
 
 <style lang="scss">
   ._form {
-    @apply relative bg-$secondary px-35px py-30px rounded-26px;
+    @apply relative bg-$secondary text-$black px-35px py-30px rounded-26px;
   }
 </style>

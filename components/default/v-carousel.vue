@@ -35,6 +35,8 @@ export default defineComponent({
     // Configurações internas do Carrossel
     let internSettings = {
       type: 'loop',
+      focus: 'center',
+      autoWidth: true,
       gap: 30,
       autoScroll: {
         speed: 0.5,
@@ -42,6 +44,10 @@ export default defineComponent({
       breakpoints: {
         768: {
           perPage: 1,
+          autoplay: true,
+          interval: 4000,
+          arrows: true,
+          autoScroll: false
         },
       },
       ...this.externSettings
@@ -60,6 +66,7 @@ export default defineComponent({
             arrows: true,
             autoplay: true,
             interval: 5000,
+            autoScroll: false,
             ...this.externSettings
           }
         }
@@ -90,7 +97,7 @@ export default defineComponent({
 
 <style lang="scss">
   ._v_carousel {
-    @apply  w-full max-w-100vw;
+    @apply  w-full max-w-98.5vw;
 
     .splide__slider {
       @apply flex flex-col-reverse;

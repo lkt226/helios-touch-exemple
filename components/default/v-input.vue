@@ -131,4 +131,11 @@ export default defineComponent({
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    ._v_input ._input_box input {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
 </style>
