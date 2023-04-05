@@ -20,11 +20,14 @@ export default {
     title: 'Transforme sua casa em um ambiente aconchegante.',
     description: 'Crie um ambiente acolhedor e exclusivo em sua casa com nossas lâmpadas únicas e elegantes. Transforme a iluminação em uma experiência única e sofisticada.'
   },
+  exemples: {
+    title: 'Veja algumas ideias para personalizar seu ambiente'
+  },
   depositions: {
     title: 'Veja quem já aprovou nossas luminárias'
   },
   form: {
     title: 'Entre em contato para encomendar as suas luminárias',
-    cta: 'Enviar'
+    cta: 'Encomendar'
   }
 }

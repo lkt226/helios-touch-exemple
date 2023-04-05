@@ -79,13 +79,18 @@ export default defineComponent({
 
 <style lang="scss">
   ._v_input {
+    @apply flex;
+    >span {
+      @apply text-0px;
+    }
     ._input_box {
-      @apply bg-white w-full overflow-hidden
-                border border-$primary rounded-5px;
+      @apply bg-$white w-full overflow-hidden
+                border border-$primary rounded-12px;
       input {
-        @apply w-full px-15px py-6px text-14px text-$black
+        @apply w-full px-15px h-53px text-$black
                 bg-transparent outline-none;
-        line-height: 26px;
+        font-size: 24px;
+        line-height: 29px;
 
         &::placeholder {
           @apply opacity-80;
@@ -95,7 +100,7 @@ export default defineComponent({
         &:-webkit-autofill:hover, 
         &:-webkit-autofill:focus, 
         &:-webkit-autofill:active{
-            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            -webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
         }
 
         &::-webkit-calendar-picker-indicator {

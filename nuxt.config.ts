@@ -36,7 +36,7 @@ export default defineNuxtConfig({
       ],
 
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: `${env.url}favicon.svg` }
+        { rel: 'icon', type: 'image/svg+xml', href: `${env.url}src/favicon.svg` }
       ]
     },
 
@@ -52,6 +52,7 @@ export default defineNuxtConfig({
     '@/assets/style/containers.css',
     '@/assets/style/layouts.scss',
     '@/assets/style/preload.scss',
+    '@/assets/style/animation.scss',
   ],
 
   components: [
@@ -62,7 +63,8 @@ export default defineNuxtConfig({
   ],
 
   plugins: [
-    '@/plugins/starter.client.ts'
+    '@/plugins/starter.client.ts',
+    '@/plugins/animation.client.ts',
   ],
 
   modules: [
@@ -81,6 +83,7 @@ export default defineNuxtConfig({
 
   build: {
     transpile: [
+      'gsap'
     ]
   },
 

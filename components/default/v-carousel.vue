@@ -17,6 +17,7 @@
 import { defineComponent } from 'vue'
 
 import { Splide, Options } from '@splidejs/splide'
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/splide/dist/css/splide-core.min.css'
 
 export default defineComponent({
@@ -34,15 +35,10 @@ export default defineComponent({
     // Configurações internas do Carrossel
     let internSettings = {
       type: 'loop',
-      drag: true,
-      focus: 0,
-      pauseOnHover: true,
-      perPage: 1,
-      perMove: 1,
-      autoplay: true,
-      interval: 5000,
       gap: 30,
-
+      autoScroll: {
+        speed: 0.5,
+      },
       breakpoints: {
         768: {
           perPage: 1,
@@ -85,7 +81,7 @@ export default defineComponent({
           }
         });
   
-        new Splide(splideElement, internSettings).mount()
+        new Splide(splideElement, internSettings).mount({AutoScroll})
       }
     }
   }
@@ -94,7 +90,7 @@ export default defineComponent({
 
 <style lang="scss">
   ._v_carousel {
-    @apply visible w-full;
+    @apply  w-full max-w-100vw;
 
     .splide__slider {
       @apply flex flex-col-reverse;

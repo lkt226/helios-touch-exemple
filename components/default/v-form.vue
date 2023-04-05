@@ -1,6 +1,6 @@
 <template>
   <div class="_form">
-    <form :id="id" @submit="submit">
+    <form :id="id" @submit="submit" class="layouts column s-gap">
       <slot />
     </form>
   </div>
@@ -19,7 +19,7 @@ export default defineComponent({
   methods: {
     submit (e: Event) {
       alert('Esse site é falso, logo o formulário não funciona 😁, vamos fingir que funcionou e vou te redirecionar pro meu linkedin 💖')
-      window.location.href = 'https://www.linkedin.com/in/victorhdsp/'
+      window.open('https://www.linkedin.com/in/victorhdsp/')
     }
   },
 })
@@ -27,6 +27,6 @@ export default defineComponent({
 
 <style lang="scss">
   ._form {
-    @apply relative;
+    @apply relative bg-$secondary px-35px py-30px rounded-26px;
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <section id="banner">
     <div class="_text container layouts column s-gap">
-      <p class="roboto">{{ lang.title }}</p>
-      <h1>{{ lang.description }}</h1>
+      <p class="roboto left-showing">{{ lang.title }}</p>
+      <h1 class="down-showing">{{ lang.description }}</h1>
     </div>
     <v-video class="_background" src="/src/videos/banner.mp4" />
   </section>
@@ -23,8 +23,8 @@ export default defineComponent({
 
 <style lang="scss">
   #banner {
-    @apply max-w-95vw w-full h-70vh mx-auto relative
-            text-$white
+    @apply max-w-95vw w-full h-75vh mx-auto relative
+            text-$white z-0
             flex items-end p-50px;
 
     ._text {

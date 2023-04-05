@@ -23,6 +23,9 @@
   "dependencies": {
     "@nuxtjs/robots": "^3.0.0",
     "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@studio-freight/lenis": "^1.0.6",
+    "gsap": "^3.11.5",
     "tailvue": "^0.1.68"
   }
 }

@@ -9,7 +9,7 @@
   --primary: #3E3E3E;
   --secondary: #FFD082;
 
-  --white: #FFFFFF;
+  --white: #DDDCDA;
   --black: #3E3E3E;
 }
 
@@ -48,8 +48,15 @@ h2 {
   }
 }
 h3 {
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.default_button {
+  @apply h-53px max-w-400px w-full mx-auto
+          bg-$white rounded-12px;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 ._background {
@@ -58,4 +65,25 @@ h3 {
 
 ._text {
   @apply content-center;
+}
+
+._scroll {
+  @apply overflow-y-auto overflow-x-hidden h-full;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+  
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--primary);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 14px;
+    border: 3px solid var(--primary);
+  }
 }
